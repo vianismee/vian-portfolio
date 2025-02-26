@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import LocalTime from "@/components/ui/local-time";
+import React from "react";
 import Header from "@/components/Header";
 import Dashboard from "./../components/Dashboard/Dashboard";
 
