@@ -5,12 +5,8 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div className="@container">
-      <div className="grid grid-row font-[family-name:var(--font-space-grotesk)]">
-        <div className="min-h-[100vh] py-10 px-[300px]">
-          <AboutMe />
-        </div>
-      </div>
+    <div className="flex flex-1 gap-0 h-min overflow-hidden px-0 flex-nowrap font-[family-name:var(--font-space-grotesk)]">
+      <AboutMe />
     </div>
   );
 }
