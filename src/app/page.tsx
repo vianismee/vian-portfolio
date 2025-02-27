@@ -1,17 +1,15 @@
 "use client";
 
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
-import Onboard from "@/components/OnBoard/OnBoard";
+import AboutMe from "@/components/AboutMe";
 import React from "react";
 
 export default function Home() {
   return (
     <div className="@container">
       <div className="grid grid-row font-[family-name:var(--font-space-grotesk)]">
-        <Header />
-        <Onboard />
-        <Footer />
+        <div className="min-h-[100vh] py-10 px-[300px]">
+          <AboutMe />
+        </div>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import LocalTime from "../ui/local-time";
 import { motion } from "framer-motion";
