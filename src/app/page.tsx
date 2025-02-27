@@ -1,15 +1,17 @@
 "use client";
 
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import Onboard from "@/components/OnBoard/OnBoard";
 import React from "react";
-import Header from "@/components/Header";
-import Dashboard from "./../components/Dashboard/Dashboard";
 
 export default function Home() {
   return (
     <div className="@container">
       <div className="grid grid-row font-[family-name:var(--font-space-grotesk)]">
         <Header />
-        <Dashboard />
+        <Onboard />
+        <Footer />
       </div>
     </div>
   );
