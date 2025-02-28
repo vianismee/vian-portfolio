@@ -9,10 +9,13 @@ const AboutMe = () => {
         </div>
         <div className="flex flex-none flex-col gap-1 p-0 w-full h-auto relative">
           <div className="flex flex-col gap-1">
-            <p className="font-medium text-primary/80 text-[calc(30pt/1.618)]">
-              Hallo
+            <p className="font-medium text-primary/80 text-[calc(30pt/1.8)]">
+              Hello, I'am
             </p>
-            <h1 className="font-bold text-[30pt]">Chevian</h1>
+            <h1 className="font-bold text-[32pt]">Chevian B. S.</h1>
+            <p className="font-medium text-primary/80 text-[calc(30pt/1.8)]">
+              I'am a
+            </p>
           </div>
         </div>
       </div>
