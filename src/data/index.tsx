@@ -7,6 +7,11 @@ export interface socialMedia {
   icon: React.ReactNode;
 }
 
+export interface meOnNumber {
+  id: number;
+  number: number;
+  desc: string;
+}
 export interface myExperience {
   id: number;
   company: string;
@@ -34,6 +39,24 @@ export const socialMedia: socialMedia[] = [
     title: "github",
     href: "https://github.com/vianismee/",
     icon: <Github className="stroke-primary/20 hover:stroke-primary" />,
+  },
+];
+
+export const meOnNumber: meOnNumber[] = [
+  {
+    id: 1,
+    number: 4,
+    desc: "Year of Experience",
+  },
+  {
+    id: 2,
+    number: 70,
+    desc: "Complate Project",
+  },
+  {
+    id: 3,
+    number: 2,
+    desc: "Formulation",
   },
 ];
 

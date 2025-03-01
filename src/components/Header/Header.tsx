@@ -3,7 +3,6 @@ import React from "react";
 import LocalTime from "../ui/local-time";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { kitoIcon } from "@/app/asset/LogoKito";
 
 const Header = () => {
   return (
