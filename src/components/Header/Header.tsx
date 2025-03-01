@@ -3,6 +3,7 @@ import React from "react";
 import LocalTime from "../ui/local-time";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { kitoIcon } from "@/app/asset/LogoKito";
 
 const Header = () => {
   return (
@@ -28,7 +29,7 @@ const Header = () => {
             </a>
           </span>
           <Image
-            src="/kitoshindo.svg"
+            src={"/kitoshindo.svg"}
             alt="Kitoshindo Logo"
             width={34}
             height={16}

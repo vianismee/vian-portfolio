@@ -7,6 +7,15 @@ export interface socialMedia {
   icon: React.ReactNode;
 }
 
+export interface myExperience {
+  id: number;
+  company: string;
+  year: string;
+  logo: string;
+  title?: string;
+  description?: string;
+}
+
 export const socialMedia: socialMedia[] = [
   {
     id: 1,
@@ -25,5 +34,26 @@ export const socialMedia: socialMedia[] = [
     title: "github",
     href: "https://github.com/vianismee/",
     icon: <Github className="stroke-primary/20 hover:stroke-primary" />,
+  },
+];
+
+export const myExperience: myExperience[] = [
+  {
+    id: 1,
+    company: "Kitoshindo",
+    year: "2023 - Now",
+    logo: "kitoshindo.svg",
+    title: "Product Development Staff",
+    description:
+      "Create a new product development process, makin discuss, brinstorming",
+  },
+  {
+    id: 2,
+    company: "Kosmesia",
+    year: "2021 - 2023",
+    logo: "kosmesialogo.svg",
+    title: "Research & Development",
+    description:
+      "Create a new product development process, makin discuss, brinstorming",
   },
 ];
