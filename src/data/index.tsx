@@ -77,6 +77,6 @@ export const myExperience: myExperience[] = [
     logo: "kosmesialogo.svg",
     title: "Research & Development",
     description:
-      "Create a new product development process, makin discuss, brinstorming",
+      "Up scaling product from trial to large scale laboratory, Manage & monitor stability test product, Create document spesification product ",
   },
 ];
