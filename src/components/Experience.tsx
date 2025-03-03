@@ -65,21 +65,23 @@ const Experience = () => {
             <h1 className="font-bold text-[18pt]">{exp.year}</h1>
           </div>
           <div className="w-full bg-primary-foreground px-[30px] py-[25px] rounded-lg space-y-[10px]">
-            <Timeline defaultValue={10}>
-              {exp.jobdesk
-                .sort((a, b) => b.id - a.id)
-                .map((job) => (
-                  <TimelineItem key={job.id} step={job.id}>
-                    <TimelineHeader>
-                      <TimelineSeparator />
-                      <TimelineDate>{job.date}</TimelineDate>
-                      <TimelineTitle>{job.title}</TimelineTitle>
-                      <TimelineIndicator />
-                    </TimelineHeader>
-                    <TimelineContent>{job.desc}</TimelineContent>
-                  </TimelineItem>
-                ))}
-            </Timeline>
+            <>
+              <Timeline defaultValue={10}>
+                {exp.jobdesk
+                  .sort((a, b) => b.id - a.id)
+                  .map((job) => (
+                    <TimelineItem key={job.id} step={job.id}>
+                      <TimelineHeader>
+                        <TimelineSeparator />
+                        <TimelineDate>{job.date}</TimelineDate>
+                        <TimelineTitle>{job.title}</TimelineTitle>
+                        <TimelineIndicator />
+                      </TimelineHeader>
+                      <TimelineContent>{job.desc}</TimelineContent>
+                    </TimelineItem>
+                  ))}
+              </Timeline>
+            </>
           </div>
         </div>
       ))}
