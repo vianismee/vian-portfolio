@@ -12,13 +12,21 @@ export interface meOnNumber {
   number: number;
   desc: string;
 }
+
+export interface jobDesk {
+  id: number;
+  date: string;
+  title: string;
+  desc: string;
+}
+
 export interface myExperience {
   id: number;
+  profile: string;
   company: string;
   year: string;
   logo: string;
-  title?: string;
-  description?: string;
+  jobdesk: jobDesk[];
 }
 
 export const socialMedia: socialMedia[] = [
@@ -63,20 +71,50 @@ export const meOnNumber: meOnNumber[] = [
 export const myExperience: myExperience[] = [
   {
     id: 1,
-    company: "Kitoshindo",
-    year: "2023 - Now",
-    logo: "kitoshindo.svg",
-    title: "Product Development Staff",
-    description:
-      "Create a new product development process, makin discuss, brinstorming",
+    profile: "Kosmesia",
+    company: "PT. Kosmetika Global Indonesia",
+    year: "2021 - 2023",
+    logo: "kosmesialogo.png",
+    jobdesk: [
+      {
+        id: 1,
+        date: "January 2021 - March 2021",
+        title: "In Process Control (IPC) Staff",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet officia, et debitis vel perspiciatis amet, fuga deleniti provident porro rem beatae neque laboriosam ab at consequuntur quibusdam voluptatem tenetur. Est.",
+      },
+      {
+        id: 2,
+        date: "March 2021 - Descember 2021",
+        title: "Quality Control Analyst Staff",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet officia, et debitis vel perspiciatis amet, fuga deleniti provident porro rem beatae neque laboriosam ab at consequuntur quibusdam voluptatem tenetur. Est.",
+      },
+      {
+        id: 3,
+        date: "January 2022 - September 2023",
+        title: "Research & Development Staff",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet officia, et debitis vel perspiciatis amet, fuga deleniti provident porro rem beatae neque laboriosam ab at consequuntur quibusdam voluptatem tenetur. Est.",
+      },
+    ],
   },
   {
     id: 2,
-    company: "Kosmesia",
-    year: "2021 - 2023",
-    logo: "kosmesialogo.svg",
-    title: "Research & Development",
-    description:
-      "Up scaling product from trial to large scale laboratory, Manage & monitor stability test product, Create document spesification product ",
+    profile: "Kitoshindo",
+    company: "PT. Kitoshindo international Biotech",
+    year: "2023 - Now",
+    logo: "kitoshindo.svg",
+    jobdesk: [
+      {
+        id: 1,
+        date: "September 2023 - January 2025",
+        title: "Product Development Staff",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet officia, et debitis vel perspiciatis amet, fuga deleniti provident porro rem beatae neque laboriosam ab at consequuntur quibusdam voluptatem tenetur. Est.",
+      },
+      {
+        id: 2,
+        date: "January 2025 - Now",
+        title: "Designer Staff",
+        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum sint deleniti atque doloremque similique culpa eligendi ipsa repudiandae sapiente sunt ducimus, suscipit ea voluptatibus at ad repellendus vel aliquam optio.",
+      },
+    ],
   },
 ];
