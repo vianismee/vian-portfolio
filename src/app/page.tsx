@@ -4,6 +4,7 @@ import AboutMe from "@/components/AboutMe";
 import React from "react";
 import MyHighligh from "./../components/MyHighligh";
 import Experience from "@/components/Experience";
+import Stack from "./../components/Stack";
 
 export default function Home() {
   return (
@@ -11,6 +12,8 @@ export default function Home() {
       <AboutMe />
       <MyHighligh />
       <Experience />
+      <Stack />
+      <div className="h-dvh"></div>
     </div>
   );
 }
