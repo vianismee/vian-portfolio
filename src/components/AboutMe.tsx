@@ -74,12 +74,18 @@ const AboutMe = () => {
           }}
           className="w-full flex flex-row h-full items-center flex-nowrap"
         >
-          <Button
-            variant={"secondary"}
-            className="text-[12pt] px-[20px] py-[25px] font-medium rounded-[10px] text-primary/80 hover:text-primary"
-          >
-            <FileText className="self-center" /> DOWNLIAD MY CV
-          </Button>
+          <div>
+            <Button
+              effect={"expandIcon"}
+              icon={FileText}
+              iconPlacement="right"
+              variant={"default"}
+              className="hover:bg-sky-500 bg-secondary text-primary p-5"
+              size={"lg"}
+            >
+              DOWNLOAD MY CV
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>

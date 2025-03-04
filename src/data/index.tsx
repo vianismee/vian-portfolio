@@ -1,5 +1,5 @@
 import { Instagram, Github, Twitter } from "lucide-react";
-
+import { StaticImageData } from "next/image";
 export interface socialMedia {
   id: number;
   title: string;
@@ -27,6 +27,28 @@ export interface myExperience {
   year: string;
   logo: string;
   jobdesk: jobDesk[];
+}
+
+export interface myStack {
+  id: number;
+  title: string;
+  design: designTools[];
+  coding: codingTools[];
+}
+
+export interface designTools {
+  id: number;
+  title: string;
+  desc: string;
+  icon: StaticImageData | string;
+  link: string;
+}
+export interface codingTools {
+  id: number;
+  title: string;
+  desc?: string;
+  icon: StaticImageData | string;
+  link: string;
 }
 
 export const socialMedia: socialMedia[] = [
@@ -114,6 +136,66 @@ export const myExperience: myExperience[] = [
         date: "January 2025 - Now",
         title: "Designer Staff",
         desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum sint deleniti atque doloremque similique culpa eligendi ipsa repudiandae sapiente sunt ducimus, suscipit ea voluptatibus at ad repellendus vel aliquam optio.",
+      },
+    ],
+  },
+];
+
+export const myStack: myStack[] = [
+  {
+    id: 1,
+    title: "My Stack",
+    design: [
+      {
+        id: 1,
+        title: "Adobe Illustrator",
+        desc: "Graphic Design Tools",
+        icon: "ailogo.png",
+        link: "adobeillustrator.com",
+      },
+      {
+        id: 2,
+        title: "Figma",
+        desc: "Graphic Design Tools",
+        icon: "figmalogo.png",
+        link: "figma.com",
+      },
+      {
+        id: 3,
+        title: "Photoshop",
+        desc: "Graphic Design Tools",
+        icon: "photoshop.png",
+        link: "photoshop.com",
+      },
+    ],
+    coding: [
+      {
+        id: 1,
+        title: "Next JS",
+        desc: "Front End Tools",
+        icon: "next.svg",
+        link: "next.js",
+      },
+      {
+        id: 2,
+        title: "Tailwind CSS",
+        desc: "Graphic Design Tools",
+        icon: "tailwindcss.svg",
+        link: "tailwindcss.com",
+      },
+      {
+        id: 3,
+        title: "React JS",
+        desc: "Graphic Design Tools",
+        icon: "tailwindcss.svg",
+        link: "react.dev",
+      },
+      {
+        id: 4,
+        title: "Astro",
+        desc: "Programing Language",
+        icon: "astro.svg",
+        link: "astro.build",
       },
     ],
   },

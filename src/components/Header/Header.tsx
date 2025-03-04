@@ -37,7 +37,7 @@ const Header = () => {
         </span>
       </div>
       <div className="flex items-center gap-4">
-        <h1 className="text-primary font-medium">Live Time</h1>
+        <h1 className="text-primary font-medium">Local Time</h1>
         <span className="font-bold px-[18px] py-[13px] bg-primary-foreground rounded-xl flex w-[110px] justify-center border-secondary border">
           <LocalTime />
         </span>
