@@ -1,18 +1,11 @@
 import { myStack } from "@/data";
+import { motion } from "framer-motion";
 import { Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Stack = () => {
-  const [useIndex, setUseIndex] = useState<number[]>([]);
-
-  useEffect(() => {
-    const renderIndex = myStack.map((_, index) => index);
-    setUseIndex(renderIndex);
-    console.log(renderIndex);
-  }, []);
-
   return (
     <section className="w-full flex flex-col gap-[30px]">
       <div className="flex flex-col gap-3">
@@ -24,18 +17,28 @@ const Stack = () => {
         </h1>
         <p className="text-[16pt] font-medium text-primary/50 mb-3">
           Navigate my experience at Skincare & Cosmetic Manufacture Industry,{" "}
-          {useIndex}
         </p>
         <div className="border-b-[2px] border-dotted border-primary/15"></div>
       </div>
       <div className="w-full">
         <ul className="grid grid-rows-[repeat(2,min-content)] grid-cols-[repeat(2,minmax(50px,1fr))] gap-4">
-          {myStack.map((stack) => (
+          {myStack.map((stack, index) => (
             <>
-              <Link href={`https://www.${stack.link}`}>
-                <li
+              <Link href={`https://www.${stack.link}`} key={stack.id}>
+                <motion.li
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      delay: (index / myStack.length) * 1,
+                      duration: 0.4,
+                    },
+                  }}
+                  viewport={{
+                    amount: 0.15,
+                  }}
                   className="h-min bg-secondary/10 group hover:bg-secondary px-[20px] py-[20px] rounded-3xl border-2 border-primary/10 flex flex-row gap-4 cursor-pointer"
-                  key={stack.id}
                 >
                   <div className="h-[100px] w-[100px]">
                     <div className="aspect-square bg-primary-foreground/10 group-hover:bg-primary-foreground flex p-3 self-center rounded-2xl border-2 border-primary/10 items-center justify-center">
@@ -53,7 +56,7 @@ const Stack = () => {
                     </h1>
                     <p className="text-[14pt] text-primary/50">{stack.desc}</p>
                   </div>
-                </li>
+                </motion.li>
               </Link>
             </>
           ))}

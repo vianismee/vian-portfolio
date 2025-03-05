@@ -72,7 +72,7 @@ export const meOnNumber: meOnNumber[] = [
   {
     id: 3,
     number: 2,
-    desc: "Formulation",
+    desc: "Product Formulation",
   },
 ];
 
