@@ -8,7 +8,16 @@ import React from "react";
 const Stack = () => {
   return (
     <section className="w-full flex flex-col gap-[30px]">
-      <div className="flex flex-col gap-3">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 0.15, duration: 0.3 },
+        }}
+        viewport={{ amount: 0.2 }}
+        className="flex flex-col gap-3"
+      >
         <h1 className="font-bold text-[28pt] inline-flex gap-7">
           <span className="self-center">
             <Zap size={45} />
@@ -16,10 +25,11 @@ const Stack = () => {
           My Stack
         </h1>
         <p className="text-[16pt] font-medium text-primary/50 mb-3">
-          Navigate my experience at Skincare & Cosmetic Manufacture Industry,{" "}
+          Creative and modern toolbox that combines both design and development
+          powerhouses
         </p>
         <div className="border-b-[2px] border-dotted border-primary/15"></div>
-      </div>
+      </motion.div>
       <div className="w-full">
         <ul className="grid grid-rows-[repeat(2,min-content)] grid-cols-[repeat(2,minmax(50px,1fr))] gap-4">
           {myStack.map((stack, index) => (

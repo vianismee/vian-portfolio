@@ -12,7 +12,7 @@ import {
   TimelineSeparator,
   TimelineTitle,
 } from "@/components/ui/timeline";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 
 const Experience = () => {
   const reverseExperience = [...myExperience].reverse();
@@ -42,21 +42,20 @@ const Experience = () => {
           </p>
           <div className="border-b-[2px] border-dotted border-primary/15"></div>
         </div>
-        {reverseExperience.map((exp) => (
+        {reverseExperience.map((exp, index) => (
           <>
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{
                 opacity: 1,
-                scale: 1,
                 y: 0,
                 transition: {
-                  duration: 0.8,
-                  delay: 0.1,
+                  delay: (index / reverseExperience.length) * 0.4,
+                  duration: 0.3,
                 },
               }}
               viewport={{
-                amount: 0.1,
+                amount: 0.15,
               }}
               className="flex flex-col flex-nowrap w-full bg-secondary border-2 border-primary/10 h-min px-[30px] py-[24px] rounded-3xl gap-4"
               key={exp.id}
