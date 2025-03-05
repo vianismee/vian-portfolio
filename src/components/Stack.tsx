@@ -23,7 +23,8 @@ const Stack = () => {
           My Stack
         </h1>
         <p className="text-[16pt] font-medium text-primary/50 mb-3">
-          Navigate my experience at Skincare & Cosmetic Manufacture Industry
+          Navigate my experience at Skincare & Cosmetic Manufacture Industry,{" "}
+          {useIndex}
         </p>
         <div className="border-b-[2px] border-dotted border-primary/15"></div>
       </div>
