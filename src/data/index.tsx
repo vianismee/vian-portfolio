@@ -1,5 +1,6 @@
 import { Instagram, Github, Twitter } from "lucide-react";
 import { StaticImageData } from "next/image";
+import { title } from "process";
 export interface socialMedia {
   id: number;
   title: string;
@@ -35,6 +36,18 @@ export interface myStack {
   desc: string;
   icon: StaticImageData | string;
   link: string;
+}
+
+export interface tags {
+  tags: string;
+}
+export interface stunningProject {
+  id: number;
+  img: StaticImageData | string;
+  title: string;
+  tag: string[];
+  desc: string;
+  link?: string;
 }
 
 export const socialMedia: socialMedia[] = [
@@ -176,5 +189,15 @@ export const myStack: myStack[] = [
     desc: "Programing Language",
     icon: "astrologo.svg",
     link: "astro.build",
+  },
+];
+
+export const stunningProject: stunningProject[] = [
+  {
+    id: 1,
+    title: "Hello World",
+    img: "Test Image",
+    tag: ["Design Graphic", "Programing"],
+    desc: "hello world",
   },
 ];

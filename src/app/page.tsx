@@ -5,6 +5,7 @@ import React from "react";
 import Experience from "@/components/Experience";
 import Stack from "./../components/Stack";
 import MyHighligh from "./../components/MyHighligh";
+import { StunningProject } from "@/components/StunningProject";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <MyHighligh />
       <Experience />
       <Stack />
+      <StunningProject />
     </div>
   );
 }
