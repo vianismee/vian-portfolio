@@ -32,21 +32,7 @@ export interface myExperience {
 export interface myStack {
   id: number;
   title: string;
-  design: designTools[];
-  coding: codingTools[];
-}
-
-export interface designTools {
-  id: number;
-  title: string;
   desc: string;
-  icon: StaticImageData | string;
-  link: string;
-}
-export interface codingTools {
-  id: number;
-  title: string;
-  desc?: string;
   icon: StaticImageData | string;
   link: string;
 }
@@ -144,59 +130,51 @@ export const myExperience: myExperience[] = [
 export const myStack: myStack[] = [
   {
     id: 1,
-    title: "My Stack",
-    design: [
-      {
-        id: 1,
-        title: "Adobe Illustrator",
-        desc: "Graphic Design Tools",
-        icon: "ailogo.svg",
-        link: "adobeillustrator.com",
-      },
-      {
-        id: 2,
-        title: "Figma",
-        desc: "Graphic Design Tools",
-        icon: "figma.svg",
-        link: "figma.com",
-      },
-      {
-        id: 3,
-        title: "Photoshop",
-        desc: "Graphic Design Tools",
-        icon: "pslogo.svg",
-        link: "photoshop.com",
-      },
-    ],
-    coding: [
-      {
-        id: 1,
-        title: "Next JS",
-        desc: "Front End Tools",
-        icon: "next.svg",
-        link: "next.js",
-      },
-      {
-        id: 2,
-        title: "Tailwind CSS",
-        desc: "Graphic Design Tools",
-        icon: "tailwindcss.svg",
-        link: "tailwindcss.com",
-      },
-      {
-        id: 3,
-        title: "React JS",
-        desc: "Graphic Design Tools",
-        icon: "tailwindcss.svg",
-        link: "react.dev",
-      },
-      {
-        id: 4,
-        title: "Astro",
-        desc: "Programing Language",
-        icon: "astro.svg",
-        link: "astro.build",
-      },
-    ],
+    title: "Adobe Illustrator",
+    desc: "Graphic Design Tools",
+    icon: "ailogo.svg",
+    link: "adobe.com",
+  },
+  {
+    id: 2,
+    title: "Figma",
+    desc: "Graphic Design Tools",
+    icon: "figma.svg",
+    link: "figma.com",
+  },
+  {
+    id: 3,
+    title: "Adobe Photoshop",
+    desc: "Graphic Design Tools",
+    icon: "pslogo.svg",
+    link: "adobe.com",
+  },
+  {
+    id: 4,
+    title: "Next JS",
+    desc: "Front End Tools",
+    icon: "nextjslogo.svg",
+    link: "nextjs.org",
+  },
+  {
+    id: 5,
+    title: "Tailwind CSS",
+    desc: "Programing Language",
+    icon: "tailwindcsslogo.svg",
+    link: "tailwindcss.com",
+  },
+  {
+    id: 6,
+    title: "React JS",
+    desc: "Programing Language",
+    icon: "reactjslogo.svg",
+    link: "react.dev",
+  },
+  {
+    id: 7,
+    title: "Astro",
+    desc: "Programing Language",
+    icon: "astrologo.svg",
+    link: "astro.build",
   },
 ];
