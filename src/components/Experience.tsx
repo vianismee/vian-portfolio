@@ -12,13 +12,13 @@ import {
   TimelineSeparator,
   TimelineTitle,
 } from "@/components/ui/timeline";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Experience = () => {
   const reverseExperience = [...myExperience].reverse();
 
   return (
-    <>
+    <div>
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ const Experience = () => {
           <div className="border-b-[2px] border-dotted border-primary/15"></div>
         </div>
         {reverseExperience.map((exp, index) => (
-          <>
+          <div key={exp.id}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{
@@ -55,10 +55,9 @@ const Experience = () => {
                 },
               }}
               viewport={{
-                amount: 0.15,
+                once: true,
               }}
               className="flex flex-col flex-nowrap w-full bg-secondary border-2 border-primary/10 h-min px-[30px] py-[24px] rounded-3xl gap-4"
-              key={exp.id}
             >
               <div className="flex flex-row gap-5 justify-between items-center">
                 <div className="flex flex-row gap-5">
@@ -99,10 +98,10 @@ const Experience = () => {
                 </>
               </div>
             </motion.div>
-          </>
+          </div>
         ))}
       </motion.section>
-    </>
+    </div>
   );
 };
 

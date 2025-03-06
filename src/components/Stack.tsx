@@ -33,7 +33,7 @@ const Stack = () => {
       <div className="w-full">
         <ul className="grid grid-rows-[repeat(2,min-content)] grid-cols-[repeat(2,minmax(50px,1fr))] gap-4">
           {myStack.map((stack, index) => (
-            <>
+            <React.Fragment key={stack.id}>
               <Link href={`https://www.${stack.link}`} key={stack.id}>
                 <motion.li
                   initial={{ opacity: 0, y: 30 }}
@@ -68,7 +68,7 @@ const Stack = () => {
                   </div>
                 </motion.li>
               </Link>
-            </>
+            </React.Fragment>
           ))}
         </ul>
       </div>

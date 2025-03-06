@@ -1,6 +1,5 @@
 import { Instagram, Github, Twitter } from "lucide-react";
 import { StaticImageData } from "next/image";
-import { title } from "process";
 export interface socialMedia {
   id: number;
   title: string;
@@ -45,6 +44,7 @@ export interface stunningProject {
   id: number;
   img: StaticImageData | string;
   title: string;
+  tools: string;
   tag: string[];
   desc: string;
   link?: string;
@@ -197,7 +197,16 @@ export const stunningProject: stunningProject[] = [
     id: 1,
     title: "Hello World",
     img: "Test Image",
+    tools: "Adobe Illustrator",
     tag: ["Design Graphic", "Programing"],
-    desc: "hello world",
+    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid esse placeat voluptatibus quos praesentium modi distinctio labore numquam itaque voluptatem.",
+  },
+  {
+    id: 2,
+    title: "Hello World",
+    img: "Test Image",
+    tools: "Adobe Illustrator",
+    tag: ["Design Graphic", "Programing"],
+    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid esse placeat voluptatibus quos praesentium modi distinctio labore numquam itaque voluptatem.",
   },
 ];
