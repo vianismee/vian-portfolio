@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Rocket } from "lucide-react";
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { stunningProject } from "@/data";
 
 export const StunningProject = () => {
