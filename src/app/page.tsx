@@ -1,11 +1,10 @@
-"use client";
-
 import AboutMe from "@/components/AboutMe";
 import React from "react";
 import Experience from "@/components/Experience";
 import Stack from "./../components/Stack";
 import MyHighligh from "./../components/MyHighligh";
 import { StunningProject } from "@/components/StunningProject";
+import Guestbook from "@/components/Guestbook/Guestbook";
 
 export default function Home() {
   return (
@@ -15,6 +14,7 @@ export default function Home() {
       <Experience />
       <Stack />
       <StunningProject />
+      <Guestbook />
     </div>
   );
 }

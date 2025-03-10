@@ -1,3 +1,5 @@
+"use client";
+
 import { BriefcaseBusiness } from "lucide-react";
 import React from "react";
 import Image from "next/image";

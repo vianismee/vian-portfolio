@@ -1,3 +1,5 @@
+"use client";
+
 import { myStack } from "@/data";
 import { motion } from "framer-motion";
 import { Zap } from "lucide-react";
