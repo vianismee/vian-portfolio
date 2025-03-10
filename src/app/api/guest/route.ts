@@ -15,3 +15,7 @@ export const POST = async (request: Request) => {
     });
     return NextResponse.json(guest);
 }
+
+export const GET = async () => {
+      const guests = await prisma.guest.findMany();
+      return NextResponse.json(guests);}

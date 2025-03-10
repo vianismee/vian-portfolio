@@ -1,6 +1,6 @@
 import { BookHeart } from "lucide-react";
 import React from "react";
-import { GuestList } from "./GuestList";
+import GuestList from "./GuestList";
 import { GuestForm } from "./guestform";
 
 const Guestbook = () => {

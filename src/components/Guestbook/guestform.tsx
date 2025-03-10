@@ -3,11 +3,18 @@
 import React, { SyntheticEvent, useState } from "react";
 import { Button } from "../ui/button";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export const GuestForm = () => {
   const [inputName, setInputName] = useState("");
   const [inputUsername, setInputUsername] = useState("");
   const [inputDesc, setInputDesc] = useState("");
+
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
+  const router = useRouter();
 
   const handlePost = async (e: SyntheticEvent) => {
     e.preventDefault();
@@ -22,6 +29,8 @@ export const GuestForm = () => {
       setInputName("");
       setInputUsername("");
       setInputDesc("");
+      router.refresh();
+      refreshPage();
     } catch (error) {
       console.error("Error posting data:", error);
     }
