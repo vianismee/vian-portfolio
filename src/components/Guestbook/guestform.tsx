@@ -1,92 +1,140 @@
 "use client";
 
-import React, { SyntheticEvent, useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "../ui/button";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from "../ui/dialog";
+import { BookHeart } from "lucide-react";
+import { Input } from "../ui/input";
+import { Label } from "@radix-ui/react-label";
+import { Textarea } from "../ui/textarea";
+
+const guestSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  username: z
+    .string()
+    .min(2, "Username must be at least 2 characters")
+    .regex(/^[^@]+$/, "Username should not contain '@'"),
+  desc: z.string().min(5, "Comment must be at least 5 characters"),
+});
 
 export const GuestForm = () => {
-  const [inputName, setInputName] = useState("");
-  const [inputUsername, setInputUsername] = useState("");
-  const [inputDesc, setInputDesc] = useState("");
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(guestSchema),
+  });
 
-  const refreshPage = () => {
-    window.location.reload();
-  };
-
-  const router = useRouter();
-
-  const handlePost = async (e: SyntheticEvent) => {
-    e.preventDefault();
-
+  const onSubmit = async (data: {
+    name: string;
+    username: string;
+    desc: string;
+  }) => {
     try {
-      await axios.post("/api/guest/", {
-        name: inputName,
-        username: inputUsername,
-        desc: inputDesc,
-      });
-
-      setInputName("");
-      setInputUsername("");
-      setInputDesc("");
-      router.refresh();
-      refreshPage();
+      await axios.post("/api/guest/", data);
+      reset();
+      window.location.reload();
     } catch (error) {
       console.error("Error posting data:", error);
     }
   };
 
   return (
-    <div className="w-full flex flex-row">
-      <div className="flex-1/2 flex">Guest Form</div>
-      <div className="flex flex-row flex-1/2">
-        <div className="w-full flex flex-col gap-[20px]">
-          <div className="flex flex-row gap-2">
-            <div className="flex flex-col gap-3 w-full justify-between">
-              <p>Your Name</p>
-              <input
-                type="text"
-                name="Name"
-                id=""
-                placeholder="Hello World"
-                className="p-4 rounded-lg bg-secondary/30 border-1 border-foreground/20"
-                value={inputName}
-                onChange={(e) => setInputName(e.target.value)}
-              />
-            </div>
-            <div className="flex flex-col gap-3">
-              <p>Your Username</p>
-              <input
-                type="text"
-                name="Username"
-                id=""
-                placeholder="Hello World"
-                className="p-4 rounded-lg bg-secondary/30 border-1 border-foreground/20"
-                value={inputUsername}
-                onChange={(e) => setInputUsername(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="w-full">
-            <textarea
-              name="Description"
-              id=""
-              placeholder="Hello World"
-              className="p-4 w-full rounded-lg bg-secondary/30 border-1 border-foreground/20"
-              value={inputDesc}
-              onChange={(e) => setInputDesc(e.target.value)}
-            ></textarea>
-          </div>
+    <div className="w-full flex flex-row justify-center">
+      <Dialog>
+        <DialogTrigger asChild>
           <Button
-            variant={"default"}
+            effect="expandIcon"
+            icon={BookHeart}
+            iconPlacement="right"
+            variant="default"
             className="cursor-pointer"
-            onClick={handlePost}
           >
-            {" "}
-            Post{" "}
+            Add Guestbook
           </Button>
-        </div>
-      </div>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogTitle className="text-[15pt]">
+            <span className="inline-flex justify-center items-center gap-3">
+              <BookHeart /> Vianismee Guestbook
+            </span>
+          </DialogTitle>
+          <DialogDescription>
+            Add your Guestbook to review my portfolio or say Hi to me
+          </DialogDescription>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col gap-4"
+          >
+            <div className="flex flex-col gap-1">
+              <Label htmlFor="name" className="font-medium">
+                Name
+              </Label>
+              <Input
+                type="text"
+                placeholder="Type your name ..."
+                className="placeholder:italic"
+                {...register("name")}
+              />
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.name.message}</p>
+              )}
+            </div>
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="username" className="font-medium">
+                Username
+              </Label>
+              <Input
+                type="text"
+                placeholder="Type your Username (without '@') ..."
+                className="placeholder:italic"
+                {...register("username")}
+              />
+              {errors.username && (
+                <p className="text-red-500 text-sm">
+                  {errors.username.message}
+                </p>
+              )}
+            </div>
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="desc" className="font-medium">
+                Comment
+              </Label>
+              <Textarea
+                placeholder="Type your comment ..."
+                className="placeholder:italic h-28"
+                {...register("desc")}
+              />
+              {errors.desc && (
+                <p className="text-red-500 text-sm">{errors.desc.message}</p>
+              )}
+            </div>
+            <div className="flex flex-row gap-4">
+              <DialogClose>
+                <Button variant="secondary" className="cursor-pointer">
+                  Close
+                </Button>
+              </DialogClose>
+              <Button type="submit" className="cursor-pointer">
+                Send
+              </Button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

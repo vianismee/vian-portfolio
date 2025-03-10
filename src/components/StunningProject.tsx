@@ -55,7 +55,6 @@ export const StunningProject = () => {
               <div className="py-[30px] px-[40px] flex flex-col w-full bg-primary-foreground rounded-2xl gap-[15px]">
                 <div className="flex flex-nowrap items-center justify-between">
                   <h1 className="font-bold text-[22pt]">{project.title}</h1>
-                  <Button>Hello World</Button>
                 </div>
                 <div className="border-y-2 py-[15px] flex flex-row gap-[30px] items-center">
                   <div className="px-4">
@@ -63,10 +62,10 @@ export const StunningProject = () => {
                       {project.tools}
                     </p>
                   </div>
-                  <div className="flex flex-row gap-[15px]">
+                  <div className="flex flex-row flex-nowrap gap-[15px]">
                     {project.tag.map((tag, tagIndex) => (
                       <p
-                        className="bg-sky-400/10 px-[16px] py-[4px] rounded-full border-1 border-sky-400"
+                        className="bg-sky-400/10 px-[10px] py-[4px] rounded-full border-1 border-sky-400 text-[10pt]"
                         key={`${tag}-${tagIndex}`}
                       >
                         {tag}

@@ -82,7 +82,7 @@ const AboutMe = () => {
               icon={FileText}
               iconPlacement="right"
               variant={"default"}
-              className="hover:bg-sky-500 bg-secondary text-primary p-5"
+              className="hover:bg-sky-500 bg-secondary text-primary p-5 cursor-pointer"
               size={"lg"}
             >
               DOWNLOAD MY CV
