@@ -1,18 +1,20 @@
-"use client";
-
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
-import Onboard from "@/components/OnBoard/OnBoard";
+import AboutMe from "@/components/AboutMe";
 import React from "react";
+import Experience from "@/components/Experience";
+import Stack from "./../components/Stack";
+import MyHighligh from "./../components/MyHighligh";
+import { StunningProject } from "@/components/StunningProject";
+import Guestbook from "@/components/Guestbook/Guestbook";
 
 export default function Home() {
   return (
-    <div className="@container">
-      <div className="grid grid-row font-[family-name:var(--font-space-grotesk)]">
-        <Header />
-        <Onboard />
-        <Footer />
-      </div>
+    <div className="flex flex-1 flex-col gap-[100px] h-min px-0 flex-nowrap font-[family-name:var(--font-space-grotesk)] mx-[370px] justify-center py-10">
+      <AboutMe />
+      <MyHighligh />
+      <Experience />
+      <Stack />
+      <StunningProject />
+      <Guestbook />
     </div>
   );
 }

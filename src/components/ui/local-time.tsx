@@ -33,7 +33,7 @@ export default function LocalTime() {
     updateTime();
     const intervalId = setInterval(updateTime, 1000);
     return () => clearInterval(intervalId);
-  }, []);
+  });
 
   return <p>{time}</p>;
 }

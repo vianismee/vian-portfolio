@@ -1,10 +1,53 @@
 import { Instagram, Github, Twitter } from "lucide-react";
-
+import { StaticImageData } from "next/image";
 export interface socialMedia {
   id: number;
   title: string;
   href: string;
   icon: React.ReactNode;
+}
+
+export interface meOnNumber {
+  id: number;
+  number: number;
+  desc: string;
+}
+
+export interface jobDesk {
+  id: number;
+  date: string;
+  title: string;
+  desc: string;
+}
+
+export interface myExperience {
+  id: number;
+  profile: string;
+  company: string;
+  year: string;
+  logo: string;
+  jobdesk: jobDesk[];
+}
+
+export interface myStack {
+  id: number;
+  title: string;
+  desc: string;
+  icon: StaticImageData | string;
+  link: string;
+}
+
+export interface tags {
+  tags: string;
+}
+export interface stunningProject {
+  id: number;
+  img: StaticImageData | string;
+  title: string;
+  tools: string;
+  tag: string[];
+  desc: string;
+  link?: string;
 }
 
 export const socialMedia: socialMedia[] = [
@@ -25,5 +68,153 @@ export const socialMedia: socialMedia[] = [
     title: "github",
     href: "https://github.com/vianismee/",
     icon: <Github className="stroke-primary/20 hover:stroke-primary" />,
+  },
+];
+
+export const meOnNumber: meOnNumber[] = [
+  {
+    id: 1,
+    number: 4,
+    desc: "Year of Experience",
+  },
+  {
+    id: 2,
+    number: 70,
+    desc: "Complate Project",
+  },
+  {
+    id: 3,
+    number: 2,
+    desc: "Product Formulation",
+  },
+];
+
+export const myExperience: myExperience[] = [
+  {
+    id: 1,
+    profile: "Kosmesia",
+    company: "PT. Kosmetika Global Indonesia",
+    year: "2021 - 2023",
+    logo: "kosmesialogo.png",
+    jobdesk: [
+      {
+        id: 1,
+        date: "January 2021 - March 2021",
+        title: "In Process Control (IPC) Staff",
+        desc: "Check Filling Weight & Finishing Good every product with sampling method for ensure weight, coding, BPOM Number, shrink & Packaging neatness variation every product accordance with spesification.",
+      },
+      {
+        id: 2,
+        date: "March 2021 - Descember 2021",
+        title: "Quality Control Analyst Staff",
+        desc: "Check & make sure the product can be released accordance spesification from pH, Viscous, Apparance & Color of product, Creating IK (Work Intruction) and Product Specification.",
+      },
+      {
+        id: 3,
+        date: "January 2022 - September 2023",
+        title: "Research & Development Staff",
+        desc: "Upscaling product from trial to large scale laboratory, Manage & monitor stability test each product to make sure ED of Product, create batch record & product spesification for mesh production.",
+      },
+    ],
+  },
+  {
+    id: 2,
+    profile: "Kitoshindo",
+    company: "PT. Kitoshindo international Biotech",
+    year: "2023 - Now",
+    logo: "kitoshindo.svg",
+    jobdesk: [
+      {
+        id: 1,
+        date: "September 2023 - January 2025",
+        title: "Product Development Staff",
+        desc: "Analysis Skincare & Cosmetic trend, make a development system collaboration with IT, create stunning power point design for new product launch",
+      },
+      {
+        id: 2,
+        date: "January 2025 - Now",
+        title: "Designer Staff",
+        desc: "Design label of product, create 3D packaging using blender",
+      },
+    ],
+  },
+];
+
+export const myStack: myStack[] = [
+  {
+    id: 1,
+    title: "Adobe Illustrator",
+    desc: "Graphic Design Tools",
+    icon: "ailogo.svg",
+    link: "adobe.com",
+  },
+  {
+    id: 2,
+    title: "Figma",
+    desc: "Graphic Design Tools",
+    icon: "figma.svg",
+    link: "figma.com",
+  },
+  {
+    id: 3,
+    title: "Adobe Photoshop",
+    desc: "Graphic Design Tools",
+    icon: "pslogo.svg",
+    link: "adobe.com",
+  },
+  {
+    id: 4,
+    title: "Next JS",
+    desc: "Front End Tools",
+    icon: "nextjslogo.svg",
+    link: "nextjs.org",
+  },
+  {
+    id: 5,
+    title: "Tailwind CSS",
+    desc: "Programing Language",
+    icon: "tailwindcsslogo.svg",
+    link: "tailwindcss.com",
+  },
+  {
+    id: 6,
+    title: "React JS",
+    desc: "Programing Language",
+    icon: "reactjslogo.svg",
+    link: "react.dev",
+  },
+  {
+    id: 7,
+    title: "Astro",
+    desc: "Programing Language",
+    icon: "astrologo.svg",
+    link: "astro.build",
+  },
+];
+
+export const stunningProject: stunningProject[] = [
+  {
+    id: 1,
+    title: "PBSI Jersey Design",
+    img: "PREVIEW%20-%20JERSEY%20-%20PBSI.png",
+    tools: "Adobe Illustrator",
+    tag: ["Design Graphic"],
+    desc: "Creating jersey for PBSI, PBSI is an abbreviation for the Badminton Association of Indonesia.",
+  },
+  {
+    id: 2,
+    title: "Cys-mela Promotion Banner",
+    img: "CYS-MELA%201920%20x%201080.jpg",
+    tools: "Photoshop",
+    tag: ["Design Graphic"],
+    desc: "Create stunning product promotion Banner Exhibition",
+  },
+  {
+    id: 3,
+    title: "Product Presentation",
+    img: "PRODUCT%20PRESENTATION%20-%2001.png",
+    tools: "Figma",
+    tag: ["Design Graphic"],
+    desc: "Create a new product presentation",
   },
 ];

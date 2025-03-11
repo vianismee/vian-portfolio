@@ -16,7 +16,9 @@ const Footer = () => {
   return (
     <div className="w-full border-zinc-700 border-t-[2px] py-6 px-[200px] flex justify-between items-center">
       <div className="flex items-center gap-4 px-[18px] py-[13px] bg-primary-foreground rounded-2xl">
-        <h1 className="font-medium">©{year} made by Vianismee</h1>
+        <h1 className="font-medium">
+          ©{year} All Rights Reserved, create by Vianismee
+        </h1>
       </div>
       <div className="flex items-center gap-4 justify-between">
         <h1 className="text-primary font-medium">Follow me on</h1>
