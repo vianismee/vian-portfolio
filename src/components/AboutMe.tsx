@@ -4,6 +4,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { FileText } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const AboutMe = () => {
   return (
@@ -17,9 +18,11 @@ const AboutMe = () => {
           type: "spring",
           stiffness: 100,
         }}
-        className="flex h-min rounded-2xl overflow-hidden aspect-square"
+        className="flex h-min rounded-2xl overflow-hidden aspect-square relative w-[500px]"
       >
-        <div className="bg-zinc-600 h-[500px] w-[500px]"></div>
+        <div className="w-full relative overflow-hidden">
+          <Image src={"/vnlogo.svg"} layout="fill" alt="vn" />
+        </div>
       </motion.div>
       <div className="flex flex-col w-full h-full gap-[30px]">
         <div>
@@ -82,7 +85,7 @@ const AboutMe = () => {
               icon={FileText}
               iconPlacement="right"
               variant={"default"}
-              className="hover:bg-sky-500 bg-secondary text-primary p-5 cursor-pointer"
+              className="hover:bg-sky-500 bg-secondary text-primary p-5 cursor-not-allowed"
               size={"lg"}
             >
               DOWNLOAD MY CV

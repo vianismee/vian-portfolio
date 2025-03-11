@@ -22,6 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" href="/vnlogo.ico" sizes="any" />
       <body className={`${spaceGrotesk.variable} antialiased`}>
         <ThemeProvider
           attribute="class"

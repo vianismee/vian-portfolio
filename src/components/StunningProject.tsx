@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Rocket } from "lucide-react";
 import React from "react";
 import { stunningProject } from "@/data";
+import Image from "next/image";
 
 export const StunningProject = () => {
   return (
@@ -49,7 +50,14 @@ export const StunningProject = () => {
               key={project.id}
             >
               <div className="rounded-3xl flex flex-row">
-                <div className="aspect-[16/9] w-[500px] bg-white/10 rounded-2xl"></div>
+                <div className="aspect-[16/9] w-[500px] bg-white/10 rounded-2xl relative overflow-hidden">
+                  <Image
+                    src={`https://ztgkfqetyzwxqdctmvql.supabase.co/storage/v1/object/public/Portfolio%20Image/Portfolio/${project.img}`}
+                    alt={project.title}
+                    layout="fill"
+                    objectFit="cover"
+                  ></Image>
+                </div>
               </div>
               <div className="py-[30px] px-[40px] flex flex-col w-full bg-primary-foreground rounded-2xl gap-[15px]">
                 <div className="flex flex-nowrap items-center justify-between">
